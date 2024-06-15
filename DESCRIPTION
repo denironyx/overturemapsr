@@ -1,10 +1,10 @@
 Package: overturemapsr
-Title: What the Package Does (One Line, Title Case)
+Title: This tool helps to download Overture data within a region of interest and converts it to a few different file formats
 Version: 0.0.0.9000
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
+    person("Dennis", "Irorere", , "denironyx@gmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
+Description: Overture Maps provides free and open geospatial map data, from many different sources and normalized to a common schema. This tool helps to download Overture data within a region of interest and converts it to a few different file formats.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
