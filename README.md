@@ -8,7 +8,10 @@
 [![R-CMD-check](https://github.com/denironyx/overturemapsr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/denironyx/overturemapsr/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
-The goal of overturemapsr is to …
+Overture Maps provides free and open geospatial map data, from many
+different sources and normalized to a common schema. This tool helps to
+download Overture data within a region of interest and converts it to a
+few different file formats.
 
 ## Installation
 
