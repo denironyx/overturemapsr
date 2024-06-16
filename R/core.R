@@ -78,6 +78,7 @@ record_batch_reader <- function(overture_type, bbox = NULL){
   # Open the dataset based on the overture_type
   dataset <- open_dataset(dataset_path(overture_type))
 
+  # based on kyle walker code - https://walker-data.com/posts/overture-buildings/
   if(!is.null(bbox)){
     filtered_df <- open_dataset(dataset_path(overture_type)) %>%
       filter(bbox$xmin > bbox[1],
