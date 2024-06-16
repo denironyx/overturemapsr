@@ -2,3 +2,9 @@
 
 export(dataset_path)
 export(get_all_overture_types)
+export(record_batch_reader)
+importFrom(arrow,open_dataset)
+importFrom(dplyr,"%>%")
+importFrom(dplyr,collect)
+importFrom(dplyr,filter)
+importFrom(sf,st_as_sf)
