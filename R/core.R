@@ -55,7 +55,7 @@ dataset_path <- function(overture_type) {
 #'
 #' @param overture_type Character. Required. The type of feature to select. Examples include 'building', 'place', etc.
 #'                      To learn more, run \code{get_all_overture_types()}.
-#' @param bbox Numeric vector. Optional. A bounding box specified as c(xmin, ymin, xmax, ymax).
+#' @param bbox_ Numeric vector. Optional. A bounding box specified as c(xmin, ymin, xmax, ymax).
 #'             It is recommended to use a bounding box to limit the dataset size and processing time.
 #'             Without a bounding box, processing the entire dataset (e.g., buildings over 2 billion) can be time-consuming.
 #'
@@ -66,25 +66,25 @@ dataset_path <- function(overture_type) {
 #' \dontrun{
 #' # Example usage with a bounding box
 #' sf_bbox <- c(-122.5, 37.7, -122.3, 37.8)
-#' result <- record_batch_reader(overture_type = 'place', bbox = sf_bbox)
+#' result <- record_batch_reader(overture_type = 'place', bbox_ = sf_bbox)
 #' print(result)
 #' }
 #'
 #' @importFrom arrow open_dataset
 #' @importFrom sf st_as_sf
 #' @importFrom dplyr %>% filter collect
-record_batch_reader <- function(overture_type, bbox = NULL){
+record_batch_reader <- function(overture_type, bbox_ = NULL){
 
   # Open the dataset based on the overture_type
   dataset <- open_dataset(dataset_path(overture_type))
 
   # based on kyle walker code - https://walker-data.com/posts/overture-buildings/
-  if(!is.null(bbox)){
-    filtered_df <- open_dataset(dataset_path(overture_type)) %>%
-      filter(bbox$xmin > bbox[1],
-             bbox$ymin > bbox[2],
-             bbox$xmax < bbox[3],
-             bbox$ymax < bbox[4]) %>%
+  if(!is.null(bbox_)){
+    filtered_df <- dataset %>%
+      filter(bbox$xmin > bbox_[1],
+             bbox$ymin > bbox_[2],
+             bbox$xmax < bbox_[3],
+             bbox$ymax < bbox_[4]) %>%
       collect() %>%
       st_as_sf(crs = 4326)
   } else {
@@ -98,5 +98,5 @@ record_batch_reader <- function(overture_type, bbox = NULL){
 
 # Example usage (uncomment to test)
 # sf_bbox <- c(-122.5, 37.7, -122.3, 37.8)
-# result <- record_batch_reader(overture_type = 'place', bbox = sf_bbox)
+# result <- record_batch_reader(overture_type = 'place', bbox_ = sf_bbox)
 # print(result)

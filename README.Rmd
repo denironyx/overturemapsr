@@ -47,6 +47,15 @@ You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-da
 
 In that case, don't forget to commit and push the resulting figure files, so they display on GitHub and CRAN.
 
+## Try it out
+
+Example lisbon building
+```{r }
+library(overturemapsr)
+
+
+```
+
 ## Functions
 
 - `get_all_overture_types`:  This function returns all available OvertureMaps theme types. 

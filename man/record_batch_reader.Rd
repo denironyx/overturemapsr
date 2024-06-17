@@ -4,13 +4,13 @@
 \alias{record_batch_reader}
 \title{record_batch_reader}
 \usage{
-record_batch_reader(overture_type, bbox = NULL)
+record_batch_reader(overture_type, bbox_ = NULL)
 }
 \arguments{
 \item{overture_type}{Character. Required. The type of feature to select. Examples include 'building', 'place', etc.
 To learn more, run \code{get_all_overture_types()}.}
 
-\item{bbox}{Numeric vector. Optional. A bounding box specified as c(xmin, ymin, xmax, ymax).
+\item{bbox_}{Numeric vector. Optional. A bounding box specified as c(xmin, ymin, xmax, ymax).
 It is recommended to use a bounding box to limit the dataset size and processing time.
 Without a bounding box, processing the entire dataset (e.g., buildings over 2 billion) can be time-consuming.}
 }
@@ -25,7 +25,7 @@ optionally within a bounding box, and converts it to an \code{sf} object.
 \dontrun{
 # Example usage with a bounding box
 sf_bbox <- c(-122.5, 37.7, -122.3, 37.8)
-result <- record_batch_reader(overture_type = 'place', bbox = sf_bbox)
+result <- record_batch_reader(overture_type = 'place', bbox_ = sf_bbox)
 print(result)
 }
 
