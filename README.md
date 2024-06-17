@@ -70,12 +70,12 @@ and specify bounding boxes of interest for your data queries.
 
 ### Notes
 
-This repository and project are based on [OvertureMaps Python
+This package was inspired and based on the [OvertureMaps Python
 Repository](https://github.com/OvertureMaps/overturemaps-py/tree/main).
-The functionality are similar and things are likely to change, including
-the user interface, until a stable release. We will keep the
-documentation here up-to-date.
+The functionality are similar and I will ensure to make the package stay
+updated.
 
-##### License
+##### Acknowledgement
 
-This package is licensed under the MIT License.
+Another inspiration for this package was based on the blog post by [Kyle
+Walker](https://walker-data.com/posts/overture-buildings/). Kudos!!!
