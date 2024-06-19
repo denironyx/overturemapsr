@@ -47,12 +47,18 @@ You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-da
 
 In that case, don't forget to commit and push the resulting figure files, so they display on GitHub and CRAN.
 
-## Try it out
-
-Example lisbon building
+## Usage
 ```{r }
+library(arrow)
+library(dplyr)
+library(sf)
 library(overturemapsr)
 
+# Bounding box of lisbon city
+ls_bbox <- c(-9.181056,38.696137,-9.095569,38.750243)
+
+# Fetching overture building data
+ls_building <- record_batch_reader('building', bbox = ls_bbox)
 
 ```
 

@@ -43,7 +43,7 @@ dataset_path <- function(overture_type) {
   theme = type_theme_map[[overture_type]]
 
   # Return the S3 path
-  return(paste0("s3://overturemaps-us-west-2/release/2024-05-16-beta.0/theme=",theme, "?region=us-west-2"))
+  return(paste0("s3://overturemaps-us-west-2/release/2024-05-16-beta.0/theme=",theme, "/type=", overture_type, "/"))
 }
 
 
