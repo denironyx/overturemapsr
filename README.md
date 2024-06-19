@@ -43,6 +43,44 @@ up-to-date. `devtools::build_readme()` is handy for this.
 In that case, don’t forget to commit and push the resulting figure
 files, so they display on GitHub and CRAN.
 
+## Usage
+
+``` r
+library(arrow)
+#> 
+#> Attaching package: 'arrow'
+#> The following object is masked from 'package:utils':
+#> 
+#>     timestamp
+```
+
+``` r
+library(dplyr)
+#> 
+#> Attaching package: 'dplyr'
+#> The following objects are masked from 'package:stats':
+#> 
+#>     filter, lag
+#> The following objects are masked from 'package:base':
+#> 
+#>     intersect, setdiff, setequal, union
+```
+
+``` r
+library(sf)
+#> Linking to GEOS 3.12.1, GDAL 3.8.4, PROJ 9.3.1; sf_use_s2() is TRUE
+```
+
+``` r
+library(overturemapsr)
+
+# Bounding box of lisbon city
+ls_bbox <- c(-9.181056,38.696137,-9.095569,38.750243)
+
+# Fetching overture building data
+ls_building <- record_batch_reader('building', bbox = ls_bbox)
+```
+
 ## Functions
 
 - `get_all_overture_types`: This function returns all available
