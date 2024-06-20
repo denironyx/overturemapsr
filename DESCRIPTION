@@ -1,6 +1,6 @@
 Package: overturemapsr
 Title: Download Overture maps Data that Comprises of Buildings, Places, and Administration Boundary
-Version: 0.0.1
+Version: 0.0.2
 Authors@R: 
     person("Dennis", "Irorere", , "denironyx@gmail.com", role = c("aut", "cre", "cph"))
 Description: Overture Maps provides free and open geospatial map data, from many different sources and normalized to a common schema. This tool helps to download Overture maps data within a region of interest and converts it to a few different file formats.
