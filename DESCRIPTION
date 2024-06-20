@@ -1,6 +1,6 @@
 Package: overturemapsr
-Title: This tool helps to download Overture data within a region of interest and converts it to a few different file formats
-Version: 0.0.0.9000
+Title: This tool helps to download Overturemaps data that comprises of buildings, places, adminstration boundary and much more
+Version: 0.0.1
 Authors@R: 
     person("Dennis", "Irorere", , "denironyx@gmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "YOUR-ORCID-ID"))
