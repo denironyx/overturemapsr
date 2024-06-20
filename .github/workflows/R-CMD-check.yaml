@@ -51,18 +51,3 @@ jobs:
         with:
           upload-snapshots: true
           build_args: 'c("--no-manual","--compact-vignettes=gs+qpdf")'
-
-
-# Separate workflow to push to release branch manually and bump version
-
-on:
-  workflow_dispatch:
-
-name: Release
-
-jobs:
-  release:
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v4
