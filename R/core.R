@@ -10,11 +10,10 @@
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' # Example usage
 #' types <- get_all_overture_types()
 #' print(types)
-#' }
+#'
 get_all_overture_types <- function() {
   return(names(all_type_theme_map()))
 }
@@ -31,11 +30,9 @@ get_all_overture_types <- function() {
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' # Example usage
 #' path <- dataset_path('place')
 #' print(path)
-#' }
 dataset_path <- function(overture_type) {
 
   # Get the theme based on the overture_type
@@ -63,8 +60,8 @@ dataset_path <- function(overture_type) {
 #' @export
 #'
 #' @examples
-#' \dontrun{
-#' # Example usage with a bounding box
+#' \donttest{
+#' # Example usage with a bounding box takes > 20 secs
 #' sf_bbox <- c(-122.5, 37.7, -122.3, 37.8)
 #' result <- record_batch_reader(overture_type = 'place', bbox = sf_bbox)
 #' print(result)

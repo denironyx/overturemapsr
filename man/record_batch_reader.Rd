@@ -22,8 +22,8 @@ This function retrieves a filtered dataset from the specified Overture dataset t
 optionally within a bounding box, and converts it to an \code{sf} object.
 }
 \examples{
-\dontrun{
-# Example usage with a bounding box
+\donttest{
+# Example usage with a bounding box takes > 20 secs
 sf_bbox <- c(-122.5, 37.7, -122.3, 37.8)
 result <- record_batch_reader(overture_type = 'place', bbox = sf_bbox)
 print(result)

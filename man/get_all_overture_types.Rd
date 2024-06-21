@@ -17,9 +17,8 @@ The theme types are important for fetching data from the S3 bucket,
 as they indicate if you are fetching places, buildings, admin, etc.
 }
 \examples{
-\dontrun{
 # Example usage
 types <- get_all_overture_types()
 print(types)
-}
+
 }

@@ -17,9 +17,7 @@ Character. The S3 path to the bucket where the data is stored.
 This function returns the S3 path for the specified Overture dataset type.
 }
 \examples{
-\dontrun{
 # Example usage
 path <- dataset_path('place')
 print(path)
-}
 }
