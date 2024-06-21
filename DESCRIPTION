@@ -1,9 +1,9 @@
 Package: overturemapsr
-Title: Download Overture maps Data that Comprises of Buildings, Places, and Administration Boundary
+Title: Download Overture Maps Data that Comprises of Buildings, Places, and Administration Boundary
 Version: 0.0.2
 Authors@R: 
     person("Dennis", "Irorere", , "denironyx@gmail.com", role = c("aut", "cre", "cph"))
-Description: Overture Maps provides free and open geospatial map data, from many different sources and normalized to a common schema. This tool helps to download Overture maps data within a region of interest and converts it to a few different file formats.
+Description: Overture Maps offers free and open geospatial map data sourced from various providers and standardized to a common schema. This tool allows you to download Overture Maps data for a specific region of interest and convert it to several different file formats. For more information, visit <https://overturemaps.org/download/>.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
