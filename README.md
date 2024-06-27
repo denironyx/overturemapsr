@@ -23,6 +23,13 @@ few different file formats.
 To install this package, you need to have the necessary dependencies
 installed. You can install the package using the following commands:
 
+### Prod Version
+``` r
+install.packages('overturemapsr')
+```
+
+
+### Dev version
 ``` r
 # install.packages("devtools")
 devtools::install_github("denironyx/overturemapsr")
