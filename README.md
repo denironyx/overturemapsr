@@ -11,6 +11,8 @@ objects for spatial analysis.
 
 [![R-CMD-check](https://github.com/denironyx/overturemapsr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/denironyx/overturemapsr/actions/workflows/R-CMD-check.yaml)
 
+[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/overturemapsr)](https://CRAN.R-project.org/package=overturemapsr)
+
 <!-- badges: end -->
 
 Overture Maps provides free and open geospatial map data, from many
