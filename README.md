@@ -9,9 +9,7 @@ objects for spatial analysis.
 
 <!-- badges: start -->
 
-[![R-CMD-check](https://github.com/denironyx/overturemapsr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/denironyx/overturemapsr/actions/workflows/R-CMD-check.yaml)
-
-[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/overturemapsr)](https://CRAN.R-project.org/package=overturemapsr)
+[![R-CMD-check](https://github.com/denironyx/overturemapsr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/denironyx/overturemapsr/actions/workflows/R-CMD-check.yaml) [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/overturemapsr)](https://CRAN.R-project.org/package=overturemapsr)
 
 <!-- badges: end -->
 
