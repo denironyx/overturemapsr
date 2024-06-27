@@ -19,7 +19,7 @@ This package provides functions to interact with OvertureMaps datasets. It inclu
 
 <!-- badges: start -->
 
-[![R-CMD-check](https://github.com/denironyx/overturemapsr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/denironyx/overturemapsr/actions/workflows/R-CMD-check.yaml)
+[![R-CMD-check](https://github.com/denironyx/overturemapsr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/denironyx/overturemapsr/actions/workflows/R-CMD-check.yaml) [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/overturemapsr)](https://CRAN.R-project.org/package=overturemapsr)
 
 <!-- badges: end -->
 
@@ -29,6 +29,14 @@ Overture Maps provides free and open geospatial map data, from many different so
 
 To install this package, you need to have the necessary dependencies installed. You can install the package using the following commands:
 
+
+#### Prod
+``` r
+install.packages('overturemapsr')
+```
+
+
+#### Dev
 ``` r
 # install.packages("devtools")
 devtools::install_github("denironyx/overturemapsr")

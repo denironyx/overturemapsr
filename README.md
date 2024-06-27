@@ -9,7 +9,8 @@ objects for spatial analysis.
 
 <!-- badges: start -->
 
-[![R-CMD-check](https://github.com/denironyx/overturemapsr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/denironyx/overturemapsr/actions/workflows/R-CMD-check.yaml) [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/overturemapsr)](https://CRAN.R-project.org/package=overturemapsr)
+[![R-CMD-check](https://github.com/denironyx/overturemapsr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/denironyx/overturemapsr/actions/workflows/R-CMD-check.yaml)
+[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/overturemapsr)](https://CRAN.R-project.org/package=overturemapsr)
 
 <!-- badges: end -->
 
@@ -23,13 +24,14 @@ few different file formats.
 To install this package, you need to have the necessary dependencies
 installed. You can install the package using the following commands:
 
-### Prod Version
+#### Prod
+
 ``` r
 install.packages('overturemapsr')
 ```
 
+#### Dev
 
-### Dev version
 ``` r
 # install.packages("devtools")
 devtools::install_github("denironyx/overturemapsr")
