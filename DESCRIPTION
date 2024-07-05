@@ -5,6 +5,8 @@ Authors@R:
     person("Dennis", "Irorere", , "denironyx@gmail.com", role = c("aut", "cre", "cph"))
 Description: Overture Maps offers free and open geospatial map data sourced from various providers and standardized to a common schema. This tool allows you to download Overture Maps data for a specific region of interest and convert it to several different file formats. For more information, visit <https://overturemaps.org/download/>.
 License: MIT + file LICENSE
+URL: https://github.com/denironyx/overturemapsr
+BugReports: https://github.com/denironyx/overturemapsr/issues
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.1
