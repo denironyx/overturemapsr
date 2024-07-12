@@ -1,5 +1,5 @@
 ---
-title: "Getting Started"
+title: "Getting Started with overturemapsr"
 ---
 
 ```{r, include = FALSE}
@@ -9,12 +9,106 @@ knitr::opts_chunk$set(
 )
 ```
 
-The overture map data project was launched by the Linus Foundation in 2022. It's goal is to create a geospatial data product that is easy-to-use and interoperable, merging the datasets from both open and commercial data contributors. The list of Overture members is long and includes many of the industry’s biggest players, like Amazon, Meta, Microsoft, and TomTom. Now they are teaming up with open data projects to create a larger and more consistent geospatial dataset than ever before.
+The Overture Map Data project was launched by the Linux Foundation in 2022. Its goal is to create a geospatial data product that is easy-to-use and interoperable, merging datasets from both open and commercial data contributors. The list of Overture members is extensive and includes many of the industry's biggest players, like Amazon, Meta, Microsoft, and TomTom. These companies are teaming up with open data projects to create a larger and more consistent geospatial dataset than ever before.
 
 ## Overturemapsr
-Overturemaps R package is a data package for accessing Overture Maps open data. With this package you can access over 2.3billion buildings footprint, 58+ million point of interest, etc made available by overture maps. 
+The `overturemapsr` R package provides access to Overture Maps open data. With this package, you can access over 2.3 billion building footprints, 52.6 million points of interest, and other features made available by Overture Maps.
 
-```{r setup}
-library(overturemapsr)
+### Installation
+```{r setup, include=FALSE}
+install.packages('overturemapsr')
 ```
 
+You can install the development version of `overturemapsr` from GitHub 
+```{r, include=FALSE}
+install.packages("devtools")
+devtools::install_github("denironyx/overturemapsr")
+```
+
+### Loading the Package
+Start by loading the `overturemapsr` package:
+```
+library(overturemapsr)
+library(arrow)
+```
+
+#### Available Themes
+You can view all available themes using the `get_all_overture_types()` function:
+
+```
+# Get all available overture types
+themes <- get_all_overture_types()
+print(themes)
+```
+
+This will return:
+
+```
+[1] "locality"                "locality_area"           "administrative_boundary"
+[4] "building"                "building_part"           "division"               
+[7] "division_area"           "place"                   "segment"                
+[10] "connector"               "infrastructure"          "land"                   
+[13] "land_cover"              "land_use"                "water"  
+```
+
+#### Accessing Datasets
+To access the datasets provided by Overture Maps, use the `arrow::open_dataset()` function along with the `dataset_path` function. Here is how you can access and explore the building footprints and points of interest datasets without loading it into memory.
+
+##### Building Footprints
+
+```
+# Access the building dataset
+building_dataset <- open_dataset(dataset_path('building'))
+
+# Get the number of rows in the building dataset
+nrow(building_dataset)
+```
+
+```
+[1] 2355192722
+```
+
+##### Point of Interest
+Using the place theme, we can fetch point of interests. 
+
+```
+# Access the place dataset
+places_dataset <- open_dataset(dataset_path('place'))
+
+# Get the number of rows in the place dataset
+nrow(places_dataset)
+```
+
+```
+[1] 52622149
+```
+
+#### Using Bounding Boxes
+To limit the size of the dataset and processing time, you can use bounding boxes. This is especially useful when dealing with large datasets. Here is an example of how to use a bounding box with the `record_batch_reader()` function that convert parquet file into data frame for use:
+
+```
+# Example bounding box
+sf_bbox <- c(-122.5, 37.7, -122.3, 37.8)
+
+# Retrieve filtered dataset based on the bounding box
+result <- record_batch_reader(overture_type = 'place', bbox = sf_bbox)
+```
+Result:
+```
+# A tibble: 6 × 15
+  id                                           geometry bbox$xmin $xmax $ymin $ymax version update_time                                                                sources names$primary    categories$main confidence websites socials emails phones 
+
+    dataset   : > <chr>            <chr>                <dbl> <list<c> <list<> <list> <list> <chr>           <list<
+ 
+1 08f2830940592b5e034cef17a0ea78ce (-122.4964 37.70068)     -122. -122.  37.7  37.7       0 2024-05-10T00:00:00.000Z                                                   [1 × 4] Palo -Mar Stabl… active_life          0.363      [1]     [1]           [1] NA               [1 × 5]
+2 08f28309462d847503a8e8da827c2bca  (-122.494 37.70005)     -122. -122.  37.7  37.7       0 2024-05-10T00:00:00.000Z                                                   [6 × 4] Gelardi Tax Ser… tax_services         0.77       [1]                   [1] NA               [1 × 5]
+3 08f283094290a29e03cfbf6f434fee90 (-122.4918 37.70196)     -122. -122.  37.7  37.7       0 2024-05-10T00:00:00.000Z                                                   [1 × 4] CorgiLand        pet_services         0.270              [1]               NA               [1 × 5]
+4 08f2830942902400033849542bf6efe8 (-122.4905 37.70099)     -122. -122.  37.7  37.7       0 2024-05-10T00:00:00.000Z                                                   [1 × 4] Ruff 'n Ready L… pet_services         0.319      [1]     [1]           [1] NA               [1 × 5]
+5 08f2830942914d12033d68719b44ca5c (-122.4889 37.70062)     -122. -122.  37.7  37.7       0 2024-05-10T00:00:00.000Z                                                   [1 × 4] Pleiades         professional_s…      0.319      [1]     [1]           [1] NA               [1 × 5]
+```
+
+#### In Summary:
+The `overturemapsr` package is a powerful tool for accessing and working with Overture Maps open data in R. It provides a straightforward way to download and manipulate large geospatial datasets. With features like bounding box filtering, you can efficiently manage and analyze the data relevant to your area of interest.
+
+### Additional Resources
+- [Bounding Box Tool from Klokantech](https://boundingbox.klokantech.com/): Use this tool to find and specify bounding boxes of interest for your data queries.
