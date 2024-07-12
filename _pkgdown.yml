@@ -1,5 +1,7 @@
 url: https://denironyx.github.io/overturemapsr/
 template:
   bootstrap: 5
-  bootswatch: cerulean
+  bootswatch: solar
+  theme: arrow-dark
+
 

@@ -22,7 +22,7 @@
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
     
 
-    <nav class="navbar fixed-top navbar-dark navbar-expand-lg bg-primary" data-bs-theme="dark"><div class="container">
+    <nav class="navbar fixed-top navbar-dark navbar-expand-lg bg-dark" data-bs-theme="dark"><div class="container">
     
     <a class="navbar-brand me-2" href="../index.html">overturemapsr</a>
 
@@ -110,8 +110,8 @@ from GitHub</p>
 <div class="section level4">
 <h4 id="available-themes">Available Themes<a class="anchor" aria-label="anchor" href="#available-themes"></a>
 </h4>
-<p>You can view all available themes using the get_all_overture_types
-function:</p>
+<p>You can view all available themes using the
+<code><a href="../reference/get_all_overture_types.html">get_all_overture_types()</a></code> function:</p>
 <pre><code><span><span class="co"># Get all available overture types</span></span>
 <span><span class="va">themes</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_all_overture_types.html">get_all_overture_types</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">themes</span><span class="op">)</span></span></code></pre>
@@ -126,9 +126,10 @@ function:</p>
 <h4 id="accessing-datasets">Accessing Datasets<a class="anchor" aria-label="anchor" href="#accessing-datasets"></a>
 </h4>
 <p>To access the datasets provided by Overture Maps, use the
-open_dataset function along with the dataset_path function. Here is how
-you can access and explore the building footprints and points of
-interest datasets without loading it into memory.</p>
+<code><a href="https://arrow.apache.org/docs/r/reference/open_dataset.html" class="external-link">arrow::open_dataset()</a></code> function along with the
+<code>dataset_path</code> function. Here is how you can access and
+explore the building footprints and points of interest datasets without
+loading it into memory.</p>
 <div class="section level5">
 <h5 id="building-footprints">Building Footprints<a class="anchor" aria-label="anchor" href="#building-footprints"></a>
 </h5>
@@ -157,8 +158,8 @@ interest datasets without loading it into memory.</p>
 <p>To limit the size of the dataset and processing time, you can use
 bounding boxes. This is especially useful when dealing with large
 datasets. Here is an example of how to use a bounding box with the
-record_batch_reader function that convert parquet file into data frame
-for use:</p>
+<code><a href="../reference/record_batch_reader.html">record_batch_reader()</a></code> function that convert parquet file
+into data frame for use:</p>
 <pre><code><span><span class="co"># Example bounding box</span></span>
 <span><span class="va">sf_bbox</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">122.5</span>, <span class="fl">37.7</span>, <span class="op">-</span><span class="fl">122.3</span>, <span class="fl">37.8</span><span class="op">)</span></span>
 <span></span>
