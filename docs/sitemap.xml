@@ -1,33 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>/404.html</loc>
+    <loc>https://denironyx.github.io/overturemapsr/404.html</loc>
   </url>
   <url>
-    <loc>/authors.html</loc>
+    <loc>https://denironyx.github.io/overturemapsr/articles/01-getting-started.html</loc>
   </url>
   <url>
-    <loc>/index.html</loc>
+    <loc>https://denironyx.github.io/overturemapsr/articles/index.html</loc>
   </url>
   <url>
-    <loc>/LICENSE-text.html</loc>
+    <loc>https://denironyx.github.io/overturemapsr/authors.html</loc>
   </url>
   <url>
-    <loc>/LICENSE.html</loc>
+    <loc>https://denironyx.github.io/overturemapsr/index.html</loc>
   </url>
   <url>
-    <loc>/news/index.html</loc>
+    <loc>https://denironyx.github.io/overturemapsr/LICENSE-text.html</loc>
   </url>
   <url>
-    <loc>/reference/dataset_path.html</loc>
+    <loc>https://denironyx.github.io/overturemapsr/LICENSE.html</loc>
   </url>
   <url>
-    <loc>/reference/get_all_overture_types.html</loc>
+    <loc>https://denironyx.github.io/overturemapsr/news/index.html</loc>
   </url>
   <url>
-    <loc>/reference/index.html</loc>
+    <loc>https://denironyx.github.io/overturemapsr/reference/dataset_path.html</loc>
   </url>
   <url>
-    <loc>/reference/record_batch_reader.html</loc>
+    <loc>https://denironyx.github.io/overturemapsr/reference/get_all_overture_types.html</loc>
+  </url>
+  <url>
+    <loc>https://denironyx.github.io/overturemapsr/reference/index.html</loc>
+  </url>
+  <url>
+    <loc>https://denironyx.github.io/overturemapsr/reference/record_batch_reader.html</loc>
   </url>
 </urlset>
