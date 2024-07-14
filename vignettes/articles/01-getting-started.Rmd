@@ -11,16 +11,16 @@ knitr::opts_chunk$set(
 
 The Overture Map Data project was launched by the Linux Foundation in 2022. Its goal is to create a geospatial data product that is easy-to-use and interoperable, merging datasets from both open and commercial data contributors. The list of Overture members is extensive and includes many of the industry's biggest players, like Amazon, Meta, Microsoft, and TomTom. These companies are teaming up with open data projects to create a larger and more consistent geospatial dataset than ever before.
 
-## Overturemapsr
+### Overturemapsr
 The `overturemapsr` R package provides access to Overture Maps open data. With this package, you can access over 2.3 billion building footprints, 52.6 million points of interest, and other features made available by Overture Maps.
 
-### Installation
-```{r setup, include=FALSE}
+#### Installation
+```
 install.packages('overturemapsr')
 ```
 
 You can install the development version of `overturemapsr` from GitHub 
-```{r, include=FALSE}
+```
 install.packages("devtools")
 devtools::install_github("denironyx/overturemapsr")
 ```
@@ -107,7 +107,7 @@ Result:
 5 08f2830942914d12033d68719b44ca5c (-122.4889 37.70062)     -122. -122.  37.7  37.7       0 2024-05-10T00:00:00.000Z                                                   [1 × 4] Pleiades         professional_s…      0.319      [1]     [1]           [1] NA               [1 × 5]
 ```
 
-#### In Summary:
+### In Summary:
 The `overturemapsr` package is a powerful tool for accessing and working with Overture Maps open data in R. It provides a straightforward way to download and manipulate large geospatial datasets. With features like bounding box filtering, you can efficiently manage and analyze the data relevant to your area of interest.
 
 ### Additional Resources
