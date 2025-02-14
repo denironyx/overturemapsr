@@ -11,6 +11,7 @@ objects for spatial analysis.
 
 [![R-CMD-check](https://github.com/denironyx/overturemapsr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/denironyx/overturemapsr/actions/workflows/R-CMD-check.yaml)
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/overturemapsr)](https://CRAN.R-project.org/package=overturemapsr)
+[![CRAN_Downloads](https://cranlogs.r-pkg.org/badges/grand-total/overturemapsr)](https://cranlogs.r-pkg.org/badges/overturemapsr)
 
 <!-- badges: end -->
 
@@ -92,7 +93,7 @@ ls_building <- record_batch_reader('building', bbox = ls_bbox)
 
 ## Functions
 
-- `get_all_overture_types`: This function returns all available
+- `get_all_overture_schema_types`: This function returns all available
   OvertureMaps theme types.
 - `dataset_path`: This function returns the S3 path for the specified
   Overture dataset type.
@@ -102,9 +103,12 @@ ls_building <- record_batch_reader('building', bbox = ls_bbox)
 
 #### Parameters
 
-- overture_type: Character. Required. The type of feature to select.
+- schema_type: Character. Required. The type of feature to select.
   Examples include ‘building’, ‘place’, etc. To learn more, run
-  get_all_overture_types().
+  get_all_overture_schema_types().
+- release_date: Character. Optional. The dataset release date (format:
+  ‘YYYY-MM-DD’). Defaults to the latest available release ‘2025-01-22’ -
+  <https://docs.overturemaps.org/release/latest/>
 - bbox: Numeric vector. Optional. A bounding box specified as c(xmin,
   ymin, xmax, ymax). It is recommended to use a bounding box to limit
   the dataset size and processing time. Without a bounding box,
@@ -124,5 +128,5 @@ updated.
 
 ##### Acknowledgement
 
-Another inspiration for this package was based on the blog post by [Kyle
-Walker](https://walker-data.com/posts/overture-buildings/). Kudos!!!
+[Kyle Walker](https://walker-data.com/posts/overture-buildings/).
+Kudos!!!

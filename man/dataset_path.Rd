@@ -4,20 +4,23 @@
 \alias{dataset_path}
 \title{dataset_path}
 \usage{
-dataset_path(overture_type)
+dataset_path(schema_type, release_date = "2025-01-22")
 }
 \arguments{
-\item{overture_type}{Character. Required. The type of feature to select.
-Examples include 'building', 'place', etc. To learn more, run \code{get_all_overture_types()}.}
+\item{schema_type}{Character. Required. The type of feature to select.
+Examples include 'building', 'place', etc. To learn more, run \code{get_all_overture_schema_types()}.}
+
+\item{release_date}{Character. Optional. The dataset release date (format: 'YYYY-MM-DD').
+Defaults to the latest available release.}
 }
 \value{
 Character. The S3 path to the bucket where the data is stored.
 }
 \description{
-This function returns the S3 path for the specified Overture dataset type.
+This function returns the S3 path for the specified Overture dataset schema type.
 }
 \examples{
 # Example usage
-path <- dataset_path('place')
+path <- dataset_path('place', release_date = '2025-01-22')
 print(path)
 }

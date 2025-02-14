@@ -2,13 +2,13 @@
 
 all_type_theme_map <- function(){
     type_theme_map = list(
-    "locality" = "admins",
-    "locality_area" = "admins",
-    "administrative_boundary" = "admins",
+    "address" = "addresses",
+    "bathymetry" = "base",
     "building" = "buildings",
     "building_part" = "buildings",
     "division" = "divisions",
     "division_area" = "divisions",
+    "division_boundary" = "divisions",
     "place" = "places",
     "segment" = "transportation",
     "connector" = "transportation",

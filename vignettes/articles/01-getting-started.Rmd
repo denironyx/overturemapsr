@@ -33,11 +33,11 @@ library(arrow)
 ```
 
 #### Available Themes
-You can view all available themes using the `get_all_overture_types()` function:
+You can view all available themes using the `get_all_overture_schema_types()` function:
 
 ```
 # Get all available overture types
-themes <- get_all_overture_types()
+themes <- get_all_overture_schema_types()
 print(themes)
 ```
 
@@ -91,7 +91,7 @@ To limit the size of the dataset and processing time, you can use bounding boxes
 sf_bbox <- c(-122.5, 37.7, -122.3, 37.8)
 
 # Retrieve filtered dataset based on the bounding box
-result <- record_batch_reader(overture_type = 'place', bbox = sf_bbox)
+result <- record_batch_reader(schema_type = 'place', bbox = sf_bbox)
 ```
 Result:
 ```

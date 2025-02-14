@@ -1,5 +1,5 @@
-## Resubmission
-This is a re submission. In this version I have:
+## R CMD check results
 
-* Reduced the length of the title to less than 65 characters.
-* change /dontrun to /donttest
+0 errors | 0 warnings | 0 note
+
+* This is a new release.
