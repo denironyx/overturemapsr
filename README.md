@@ -119,14 +119,10 @@ ls_building <- record_batch_reader('building', bbox = ls_bbox)
 Klokantech](https://boundingbox.klokantech.com/): Use this tool to find
 and specify bounding boxes of interest for your data queries.
 
-### Notes
+## Sponsored By
 
-This package was inspired and based on the [OvertureMaps Python
-Repository](https://github.com/OvertureMaps/overturemaps-py/tree/main).
-The functionality are similar and I will ensure to make the package stay
-updated.
-
-##### Acknowledgement
-
-[Kyle Walker](https://walker-data.com/posts/overture-buildings/).
-Kudos!!!
+<figure>
+<img src="img/unpatterned.png" alt="https://unpatterned.org" />
+<figcaption aria-hidden="true"><a href="https://unpatterned.org"
+class="uri">https://unpatterned.org</a></figcaption>
+</figure>
