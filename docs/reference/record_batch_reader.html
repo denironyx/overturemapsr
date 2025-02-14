@@ -12,7 +12,7 @@ optionally within a bounding box, and converts it to an sf object."><!-- mathjax
     
     <a class="navbar-brand me-2" href="../index.html">overturemapsr</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.4</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -60,20 +60,25 @@ optionally within a bounding box, and converts it to an <code>sf</code> object.<
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">record_batch_reader</span><span class="op">(</span><span class="va">overture_type</span>, bbox <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">record_batch_reader</span><span class="op">(</span><span class="va">schema_type</span>, bbox <span class="op">=</span> <span class="cn">NULL</span>, release_date <span class="op">=</span> <span class="st">"2025-01-22"</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
     <h2 id="arguments">Arguments<a class="anchor" aria-label="anchor" href="#arguments"></a></h2>
-    <dl><dt>overture_type</dt>
+    <dl><dt>schema_type</dt>
 <dd><p>Character. Required. The type of feature to select. Examples include 'building', 'place', etc.
-To learn more, run <code><a href="get_all_overture_types.html">get_all_overture_types()</a></code>.</p></dd>
+To learn more, run <code><a href="get_all_overture_schema_types.html">get_all_overture_schema_types()</a></code>.</p></dd>
 
 
 <dt>bbox</dt>
 <dd><p>Numeric vector. Optional. A bounding box specified as c(xmin, ymin, xmax, ymax).
 It is recommended to use a bounding box to limit the dataset size and processing time.
 Without a bounding box, processing the entire dataset (e.g., buildings over 2 billion) can be time-consuming.</p></dd>
+
+
+<dt>release_date</dt>
+<dd><p>Character. Optional. The dataset release date (format: 'YYYY-MM-DD').
+Defaults to the latest available release.</p></dd>
 
 </dl></div>
     <div class="section level2">
@@ -88,35 +93,10 @@ Without a bounding box, processing the entire dataset (e.g., buildings over 2 bi
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span><span class="co"># Example usage with a bounding box takes &gt; 20 secs</span></span></span>
 <span class="r-in"><span><span class="va">sf_bbox</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">122.5</span>, <span class="fl">37.7</span>, <span class="op">-</span><span class="fl">122.3</span>, <span class="fl">37.8</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="va">result</span> <span class="op">&lt;-</span> <span class="fu">record_batch_reader</span><span class="op">(</span>overture_type <span class="op">=</span> <span class="st">'place'</span>, bbox <span class="op">=</span> <span class="va">sf_bbox</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> OGR: Unsupported geometry type</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> OGR: Unsupported geometry type</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> OGR: Unsupported geometry type</span>
+<span class="r-in"><span><span class="va">result</span> <span class="op">&lt;-</span> <span class="fu">record_batch_reader</span><span class="op">(</span>schema_type <span class="op">=</span> <span class="st">'place'</span>, bbox <span class="op">=</span> <span class="va">sf_bbox</span><span class="op">)</span></span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in record_batch_reader(schema_type = "place", bbox = sf_bbox):</span> unused argument (schema_type = "place")</span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">result</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Simple feature collection with 34384 features and 14 fields (with 10 geometries empty)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Geometry type: POINT</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Dimension:     XY</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Bounding box:  xmin: -122.5 ymin: 37.70001 xmax: -122.3003 ymax: 37.79999</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Geodetic CRS:  WGS 84</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 34,384 × 15</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    id                        geometry bbox$xmin version update_time      sources</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  <span style="color: #BCBCBC;">*</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                  <span style="color: #949494; font-style: italic;">&lt;POINT [°]&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;list&lt;&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 08f283094059… (-122.4964 37.70068)     -<span style="color: #BB0000;">122.</span>       0 2024-05-10T00:0… <span style="color: #949494;">[1 × 4]</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 08f28309462d…  (-122.494 37.70005)     -<span style="color: #BB0000;">122.</span>       0 2024-05-10T00:0… <span style="color: #949494;">[6 × 4]</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 08f283094290… (-122.4918 37.70196)     -<span style="color: #BB0000;">122.</span>       0 2024-05-10T00:0… <span style="color: #949494;">[1 × 4]</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 08f283094290… (-122.4905 37.70099)     -<span style="color: #BB0000;">122.</span>       0 2024-05-10T00:0… <span style="color: #949494;">[1 × 4]</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 08f283094291… (-122.4889 37.70062)     -<span style="color: #BB0000;">122.</span>       0 2024-05-10T00:0… <span style="color: #949494;">[1 × 4]</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 08f28309429a… (-122.4885 37.70176)     -<span style="color: #BB0000;">122.</span>       0 2024-05-10T00:0… <span style="color: #949494;">[1 × 4]</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 08f283094282… (-122.4919 37.70281)     -<span style="color: #BB0000;">122.</span>       0 2024-05-10T00:0… <span style="color: #949494;">[1 × 4]</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 08f283094282…   (-122.492 37.7029)     -<span style="color: #BB0000;">122.</span>       0 2024-05-10T00:0… <span style="color: #949494;">[2 × 4]</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 08f283094282…   (-122.492 37.7029)     -<span style="color: #BB0000;">122.</span>       0 2024-05-10T00:0… <span style="color: #949494;">[1 × 4]</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 08f283094282… (-122.4919 37.70293)     -<span style="color: #BB0000;">122.</span>       0 2024-05-10T00:0… <span style="color: #949494;">[1 × 4]</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 34,374 more rows</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 12 more variables: bbox$xmax &lt;dbl&gt;, $ymin &lt;dbl&gt;, $ymax &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   names &lt;tibble[,3]&gt;, categories &lt;tibble[,2]&gt;, confidence &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   websites &lt;list&lt;character&gt;&gt;, socials &lt;list&lt;character&gt;&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   emails &lt;list&lt;character&gt;&gt;, phones &lt;list&lt;character&gt;&gt;, brand &lt;tibble[,2]&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   addresses &lt;list&lt;  tbl_df&lt;    freeform: character    locality: character    postcode: character    region  : character    country : character  &gt;&gt;&gt;</span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(expr, envir, enclos):</span> object 'result' not found</span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 <span class="r-in"><span></span></span>
 </code></pre></div>

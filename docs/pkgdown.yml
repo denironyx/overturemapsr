@@ -1,9 +1,9 @@
-pandoc: 3.1.11
+pandoc: '3.2'
 pkgdown: 2.0.9
 pkgdown_sha: ~
 articles:
   01-getting-started: 01-getting-started.html
-last_built: 2024-07-12T19:32Z
+last_built: 2025-02-14T15:53Z
 urls:
   reference: https://denironyx.github.io/overturemapsr/reference
   article: https://denironyx.github.io/overturemapsr/articles

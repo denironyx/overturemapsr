@@ -26,7 +26,7 @@
     
     <a class="navbar-brand me-2" href="index.html">overturemapsr</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.4</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -139,7 +139,7 @@
 </h2>
 <ul>
 <li>
-<code>get_all_overture_types</code>: This function returns all available OvertureMaps theme types.</li>
+<code>get_all_overture_schema_types</code>: This function returns all available OvertureMaps theme types.</li>
 <li>
 <code>dataset_path</code>: This function returns the S3 path for the specified Overture dataset type.</li>
 <li>
@@ -149,7 +149,9 @@
 <h4 id="parameters">Parameters<a class="anchor" aria-label="anchor" href="#parameters"></a>
 </h4>
 <ul>
-<li>overture_type: Character. Required. The type of feature to select. Examples include ‘building’, ‘place’, etc. To learn more, run get_all_overture_types().</li>
+<li>schema_type: Character. Required. The type of feature to select. Examples include ‘building’, ‘place’, etc. To learn more, run get_all_overture_schema_types().</li>
+<li>release_date: Character. Optional. The dataset release date (format: ‘YYYY-MM-DD’). Defaults to the latest available release ‘2025-01-22’ - <a href="https://docs.overturemaps.org/release/latest/" class="external-link uri">https://docs.overturemaps.org/release/latest/</a>
+</li>
 <li>bbox: Numeric vector. Optional. A bounding box specified as c(xmin, ymin, xmax, ymax). It is recommended to use a bounding box to limit the dataset size and processing time. Without a bounding box, processing the entire dataset (e.g., buildings over 2 billion) can be time-consuming.</li>
 </ul>
 <p><a href="https://boundingbox.klokantech.com/" class="external-link">Bounding Box Tool from Klokantech</a>: Use this tool to find and specify bounding boxes of interest for your data queries.</p>
@@ -161,7 +163,7 @@
 <div class="section level5">
 <h5 id="acknowledgement">Acknowledgement<a class="anchor" aria-label="anchor" href="#acknowledgement"></a>
 </h5>
-<p>Another inspiration for this package was based on the blog post by <a href="https://walker-data.com/posts/overture-buildings/" class="external-link">Kyle Walker</a>. Kudos!!!</p>
+<p><a href="https://walker-data.com/posts/overture-buildings/" class="external-link">Kyle Walker</a>. Kudos!!!</p>
 </div>
 </div>
 </div>
@@ -203,6 +205,7 @@
 <ul class="list-unstyled">
 <li><a href="https://github.com/denironyx/overturemapsr/actions/workflows/R-CMD-check.yaml" class="external-link"><img src="https://github.com/denironyx/overturemapsr/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a></li>
 <li><a href="https://CRAN.R-project.org/package=overturemapsr" class="external-link"><img src="https://www.r-pkg.org/badges/version/overturemapsr" alt="CRAN_Status_Badge"></a></li>
+<li><a href="https://cranlogs.r-pkg.org/badges/overturemapsr" class="external-link"><img src="https://cranlogs.r-pkg.org/badges/grand-total/overturemapsr" alt="CRAN_Downloads"></a></li>
 </ul>
 </div>
 

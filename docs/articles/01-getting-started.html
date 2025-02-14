@@ -26,7 +26,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">overturemapsr</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.4</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -115,9 +115,9 @@ from GitHub</p>
 <h4 id="available-themes">Available Themes<a class="anchor" aria-label="anchor" href="#available-themes"></a>
 </h4>
 <p>You can view all available themes using the
-<code><a href="../reference/get_all_overture_types.html">get_all_overture_types()</a></code> function:</p>
+<code><a href="../reference/get_all_overture_schema_types.html">get_all_overture_schema_types()</a></code> function:</p>
 <pre><code><span><span class="co"># Get all available overture types</span></span>
-<span><span class="va">themes</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_all_overture_types.html">get_all_overture_types</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="va">themes</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_all_overture_schema_types.html">get_all_overture_schema_types</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">themes</span><span class="op">)</span></span></code></pre>
 <p>This will return:</p>
 <pre><code>[1] "locality"                "locality_area"           "administrative_boundary"
@@ -168,7 +168,7 @@ into data frame for use:</p>
 <span><span class="va">sf_bbox</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">122.5</span>, <span class="fl">37.7</span>, <span class="op">-</span><span class="fl">122.3</span>, <span class="fl">37.8</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Retrieve filtered dataset based on the bounding box</span></span>
-<span><span class="va">result</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/record_batch_reader.html">record_batch_reader</a></span><span class="op">(</span>overture_type <span class="op">=</span> <span class="st">'place'</span>, bbox <span class="op">=</span> <span class="va">sf_bbox</span><span class="op">)</span></span></code></pre>
+<span><span class="va">result</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/record_batch_reader.html">record_batch_reader</a></span><span class="op">(</span>schema_type <span class="op">=</span> <span class="st">'place'</span>, bbox <span class="op">=</span> <span class="va">sf_bbox</span><span class="op">)</span></span></code></pre>
 <p>Result:</p>
 <pre><code># A tibble: 6 × 15
   id                                           geometry bbox$xmin $xmax $ymin $ymax version update_time                                                                sources names$primary    categories$main confidence websites socials emails phones 
