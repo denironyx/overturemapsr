@@ -1,6 +1,11 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
+### ⭐ **Star the Repo**  
+If you find this project valuable, **star** ⭐ this repository to support the work and help others discover it!  
+
+---
+
 # OvertureMaps R Package
 
 This package provides functions to interact with OvertureMaps datasets.
