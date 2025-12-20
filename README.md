@@ -8,7 +8,7 @@ If you find this project valuable, **star** ⭐ this repository to support the w
 
 # OvertureMaps R Package
 
-This package provides functions to interact with OvertureMaps datasets.
+This package provides functions to interact directly with Overture Maps data.
 It includes utilities for fetching data from S3 and converting it to sf
 objects for spatial analysis.
 
